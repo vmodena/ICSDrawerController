@@ -259,7 +259,9 @@ typedef NS_ENUM(NSUInteger, ICSDrawerControllerState)
                 CGFloat centerViewLocation = self.centerView.frame.origin.x;
                 if (centerViewLocation == kICSDrawerControllerDrawerDepth) {
                     // Open the drawer without animation, as it has already being dragged in its final position
-                    [self setNeedsStatusBarAppearanceUpdate];
+                    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)])
+                        [self setNeedsStatusBarAppearanceUpdate];
+                    
                     [self didOpen];
                 }
                 else if (centerViewLocation > self.view.bounds.size.width / 3
@@ -279,7 +281,9 @@ typedef NS_ENUM(NSUInteger, ICSDrawerControllerState)
                 CGFloat centerViewLocation = self.centerView.frame.origin.x;
                 if (centerViewLocation == 0.0f) {
                     // Close the drawer without animation, as it has already being dragged in its final position
-                    [self setNeedsStatusBarAppearanceUpdate];
+                    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)])
+                        [self setNeedsStatusBarAppearanceUpdate];
+                    
                     [self didClose];
                 }
                 else if (centerViewLocation < (2 * self.view.bounds.size.width) / 3
@@ -322,22 +326,43 @@ typedef NS_ENUM(NSUInteger, ICSDrawerControllerState)
     CGRect centerViewFinalFrame = self.view.bounds;
     centerViewFinalFrame.origin.x = kICSDrawerControllerDrawerDepth;
     
-    [UIView animateWithDuration:kICSDrawerControllerAnimationDuration
-                          delay:0
-         usingSpringWithDamping:kICSDrawerControllerOpeningAnimationSpringDamping
-          initialSpringVelocity:kICSDrawerControllerOpeningAnimationSpringInitialVelocity
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         self.centerView.frame = centerViewFinalFrame;
-                         self.leftView.frame = leftViewFinalFrame;
-                         
-                         [self setNeedsStatusBarAppearanceUpdate];
-                     }
-                     completion:^(BOOL finished) {            
-                         if (finished) {
-                             [self didOpen];
+    if (([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)) {
+        [UIView animateWithDuration:kICSDrawerControllerAnimationDuration
+                              delay:0
+             usingSpringWithDamping:kICSDrawerControllerOpeningAnimationSpringDamping
+              initialSpringVelocity:kICSDrawerControllerOpeningAnimationSpringInitialVelocity
+                            options:UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             self.centerView.frame = centerViewFinalFrame;
+                             self.leftView.frame = leftViewFinalFrame;
+                             
+                             if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)])
+                                 [self setNeedsStatusBarAppearanceUpdate];
+                             
                          }
-                     }];
+                         completion:^(BOOL finished) {
+                             if (finished) {
+                                 [self didOpen];
+                             }
+                         }];
+    }
+    else{
+        [UIView animateWithDuration:kICSDrawerControllerAnimationDuration
+                              delay:0
+                            options:UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             self.centerView.frame = centerViewFinalFrame;
+                             self.leftView.frame = leftViewFinalFrame;
+                             
+                             if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)])
+                                 [self setNeedsStatusBarAppearanceUpdate];
+                             
+                         } completion:^(BOOL finished) {
+                             if (finished) {
+                                 [self didOpen];
+                             }
+                         }];
+    }
 }
 #pragma mark Closing animation
 - (void)animateClosing
@@ -351,22 +376,43 @@ typedef NS_ENUM(NSUInteger, ICSDrawerControllerState)
     leftViewFinalFrame.origin.x = kICSDrawerControllerLeftViewInitialOffset;
     CGRect centerViewFinalFrame = self.view.bounds;
     
-    [UIView animateWithDuration:kICSDrawerControllerAnimationDuration
-                          delay:0
-         usingSpringWithDamping:kICSDrawerControllerClosingAnimationSpringDamping
-          initialSpringVelocity:kICSDrawerControllerClosingAnimationSpringInitialVelocity
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         self.centerView.frame = centerViewFinalFrame;
-                         self.leftView.frame = leftViewFinalFrame;
-                         
-                         [self setNeedsStatusBarAppearanceUpdate];
-                     }
-                     completion:^(BOOL finished) {
-                         if (finished) {
-                             [self didClose];
+    if (([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)) {
+        [UIView animateWithDuration:kICSDrawerControllerAnimationDuration
+                              delay:0
+             usingSpringWithDamping:kICSDrawerControllerClosingAnimationSpringDamping
+              initialSpringVelocity:kICSDrawerControllerClosingAnimationSpringInitialVelocity
+                            options:UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             self.centerView.frame = centerViewFinalFrame;
+                             self.leftView.frame = leftViewFinalFrame;
+                             
+                             if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)])
+                                 [self setNeedsStatusBarAppearanceUpdate];
+                             
                          }
-                     }];
+                         completion:^(BOOL finished) {
+                             if (finished) {
+                                 [self didClose];
+                             }
+                         }];
+    }
+    else {
+        [UIView animateWithDuration:kICSDrawerControllerAnimationDuration
+                              delay:0
+                            options:UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             self.centerView.frame = centerViewFinalFrame;
+                             self.leftView.frame = leftViewFinalFrame;
+                             
+                             if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)])
+                                 [self setNeedsStatusBarAppearanceUpdate];
+                             
+                         } completion:^(BOOL finished) {
+                             if (finished) {
+                                 [self didClose];
+                             }
+                         }];
+    }
 }
 
 #pragma mark - Opening the drawer
