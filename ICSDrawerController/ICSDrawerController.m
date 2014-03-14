@@ -333,10 +333,8 @@ typedef NS_ENUM(NSUInteger, ICSDrawerControllerState)
                          
                          [self setNeedsStatusBarAppearanceUpdate];
                      }
-                     completion:^(BOOL finished) {            
-                         if (finished) {
-                             [self didOpen];
-                         }
+                     completion:^(BOOL finished) {
+                         [self didOpen];
                      }];
 }
 #pragma mark Closing animation
@@ -363,9 +361,7 @@ typedef NS_ENUM(NSUInteger, ICSDrawerControllerState)
                          [self setNeedsStatusBarAppearanceUpdate];
                      }
                      completion:^(BOOL finished) {
-                         if (finished) {
-                             [self didClose];
-                         }
+                         [self didClose];
                      }];
 }
 
@@ -515,14 +511,12 @@ typedef NS_ENUM(NSUInteger, ICSDrawerControllerState)
                          self.centerView.frame = f;
                      }
                      completion:^(BOOL finished) {
-                         if (finished) {
-                             // The center view controller is now out of sight
-                             if (reloadBlock) {
-                                 reloadBlock();
-                             }
-                             // Finally, close the drawer
-                             [self animateClosing];
+                         // The center view controller is now out of sight
+                         if (reloadBlock) {
+                             reloadBlock();
                          }
+                         // Finally, close the drawer
+                         [self animateClosing];
                      }];
 }
 
@@ -544,28 +538,26 @@ typedef NS_ENUM(NSUInteger, ICSDrawerControllerState)
                          self.centerView.frame = f;
                      }
                      completion:^(BOOL finished) {
-                         if (finished) {
-                             // The center view controller is now out of sight
-                             
-                             // Remove the current center view controller from the container
-                             if ([self.centerViewController respondsToSelector:@selector(setDrawer:)]) {
-                                 self.centerViewController.drawer = nil;
-                             }
-                             [self.centerViewController.view removeFromSuperview];
-                             [self.centerViewController removeFromParentViewController];
-                             
-                             // Set the new center view controller
-                             self.centerViewController = viewController;
-                             if ([self.centerViewController respondsToSelector:@selector(setDrawer:)]) {
-                                 self.centerViewController.drawer = self;
-                             }
-                             
-                             // Add the new center view controller to the container
-                             [self addCenterViewController];
-                             
-                             // Finally, close the drawer
-                             [self animateClosing];
+                         // The center view controller is now out of sight
+                         
+                         // Remove the current center view controller from the container
+                         if ([self.centerViewController respondsToSelector:@selector(setDrawer:)]) {
+                             self.centerViewController.drawer = nil;
                          }
+                         [self.centerViewController.view removeFromSuperview];
+                         [self.centerViewController removeFromParentViewController];
+                         
+                         // Set the new center view controller
+                         self.centerViewController = viewController;
+                         if ([self.centerViewController respondsToSelector:@selector(setDrawer:)]) {
+                             self.centerViewController.drawer = self;
+                         }
+                         
+                         // Add the new center view controller to the container
+                         [self addCenterViewController];
+                         
+                         // Finally, close the drawer
+                         [self animateClosing];
                      }];
 }
 
