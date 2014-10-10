@@ -18,6 +18,15 @@
 		5F0B654718A3AD1C00DFB3C1 /* ICSColorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0B654618A3AD1C00DFB3C1 /* ICSColorsViewController.m */; };
 		5F0B654A18A3E2C600DFB3C1 /* ICSPlainColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0B654918A3E2C600DFB3C1 /* ICSPlainColorViewController.m */; };
 		5F0B654E18A3F09800DFB3C1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F0B654D18A3F09800DFB3C1 /* Images.xcassets */; };
+		9C6ECDA019E8111300A2C1F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6ECD9F19E8111300A2C1F9 /* AppDelegate.swift */; };
+		9C6ECDC019E811EF00A2C1F9 /* ICSColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6ECDBE19E811EF00A2C1F9 /* ICSColorViewController.swift */; };
+		9C6ECDC119E811EF00A2C1F9 /* ICSPlainColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6ECDBF19E811EF00A2C1F9 /* ICSPlainColorViewController.swift */; };
+		9C6ECDC219E82F4D00A2C1F9 /* ICSDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0B653A18A3A82300DFB3C1 /* ICSDrawerController.m */; };
+		9C6ECDC319E82F4D00A2C1F9 /* ICSDropShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0B653C18A3A82300DFB3C1 /* ICSDropShadowView.m */; };
+		9C6ECDC419E82FDD00A2C1F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F0B654D18A3F09800DFB3C1 /* Images.xcassets */; };
+		9C6ECDC519E830DC00A2C1F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0B650B18A3A78800DFB3C1 /* CoreGraphics.framework */; };
+		9C6ECDC619E830E600A2C1F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0B650D18A3A78800DFB3C1 /* UIKit.framework */; };
+		9C6ECDC719E830EE00A2C1F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0B650918A3A78800DFB3C1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +49,12 @@
 		5F0B654818A3E2C600DFB3C1 /* ICSPlainColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSPlainColorViewController.h; sourceTree = "<group>"; };
 		5F0B654918A3E2C600DFB3C1 /* ICSPlainColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSPlainColorViewController.m; sourceTree = "<group>"; };
 		5F0B654D18A3F09800DFB3C1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9C6ECD9B19E8111300A2C1F9 /* Colors-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Colors-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C6ECD9E19E8111300A2C1F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C6ECD9F19E8111300A2C1F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9C6ECDBD19E811EF00A2C1F9 /* Colors-Swift-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Colors-Swift-Header.h"; sourceTree = "<group>"; };
+		9C6ECDBE19E811EF00A2C1F9 /* ICSColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICSColorViewController.swift; sourceTree = "<group>"; };
+		9C6ECDBF19E811EF00A2C1F9 /* ICSPlainColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICSPlainColorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +68,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9C6ECD9819E8111300A2C1F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C6ECDC519E830DC00A2C1F9 /* CoreGraphics.framework in Frameworks */,
+				9C6ECDC619E830E600A2C1F9 /* UIKit.framework in Frameworks */,
+				9C6ECDC719E830EE00A2C1F9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -60,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				5F0B650F18A3A78800DFB3C1 /* Colors */,
+				9C6ECD9C19E8111300A2C1F9 /* Colors-Swift */,
 				5F0B650818A3A78800DFB3C1 /* Frameworks */,
 				5F0B650718A3A78800DFB3C1 /* Products */,
 			);
@@ -69,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				5F0B650618A3A78800DFB3C1 /* Colors.app */,
+				9C6ECD9B19E8111300A2C1F9 /* Colors-Swift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,6 +149,26 @@
 			path = ../../ICSDrawerController;
 			sourceTree = "<group>";
 		};
+		9C6ECD9C19E8111300A2C1F9 /* Colors-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				9C6ECDBD19E811EF00A2C1F9 /* Colors-Swift-Header.h */,
+				9C6ECDBE19E811EF00A2C1F9 /* ICSColorViewController.swift */,
+				9C6ECDBF19E811EF00A2C1F9 /* ICSPlainColorViewController.swift */,
+				9C6ECD9F19E8111300A2C1F9 /* AppDelegate.swift */,
+				9C6ECD9D19E8111300A2C1F9 /* Supporting Files */,
+			);
+			path = "Colors-Swift";
+			sourceTree = "<group>";
+		};
+		9C6ECD9D19E8111300A2C1F9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C6ECD9E19E8111300A2C1F9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,6 +189,23 @@
 			productReference = 5F0B650618A3A78800DFB3C1 /* Colors.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9C6ECD9A19E8111300A2C1F9 /* Colors-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C6ECDBB19E8111300A2C1F9 /* Build configuration list for PBXNativeTarget "Colors-Swift" */;
+			buildPhases = (
+				9C6ECD9719E8111300A2C1F9 /* Sources */,
+				9C6ECD9819E8111300A2C1F9 /* Frameworks */,
+				9C6ECD9919E8111300A2C1F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Colors-Swift";
+			productName = "Colors-Swift";
+			productReference = 9C6ECD9B19E8111300A2C1F9 /* Colors-Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -151,6 +215,11 @@
 				CLASSPREFIX = ICS;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "ice cream studios s.r.l.";
+				TargetAttributes = {
+					9C6ECD9A19E8111300A2C1F9 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+				};
 			};
 			buildConfigurationList = 5F0B650118A3A78800DFB3C1 /* Build configuration list for PBXProject "Colors" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -158,6 +227,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 5F0B64FD18A3A78800DFB3C1;
 			productRefGroup = 5F0B650718A3A78800DFB3C1 /* Products */;
@@ -165,6 +235,7 @@
 			projectRoot = "";
 			targets = (
 				5F0B650518A3A78800DFB3C1 /* Colors */,
+				9C6ECD9A19E8111300A2C1F9 /* Colors-Swift */,
 			);
 		};
 /* End PBXProject section */
@@ -176,6 +247,14 @@
 			files = (
 				5F0B651418A3A78800DFB3C1 /* InfoPlist.strings in Resources */,
 				5F0B654E18A3F09800DFB3C1 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C6ECD9919E8111300A2C1F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C6ECDC419E82FDD00A2C1F9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +271,18 @@
 				5F0B653D18A3A82300DFB3C1 /* ICSDrawerController.m in Sources */,
 				5F0B651618A3A78800DFB3C1 /* main.m in Sources */,
 				5F0B653E18A3A82300DFB3C1 /* ICSDropShadowView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C6ECD9719E8111300A2C1F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C6ECDC219E82F4D00A2C1F9 /* ICSDrawerController.m in Sources */,
+				9C6ECDC319E82F4D00A2C1F9 /* ICSDropShadowView.m in Sources */,
+				9C6ECDC019E811EF00A2C1F9 /* ICSColorViewController.swift in Sources */,
+				9C6ECDA019E8111300A2C1F9 /* AppDelegate.swift in Sources */,
+				9C6ECDC119E811EF00A2C1F9 /* ICSPlainColorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +400,37 @@
 			};
 			name = Release;
 		};
+		9C6ECDB719E8111300A2C1F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Colors-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Colors-Swift/Colors-Swift-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		9C6ECDB819E8111300A2C1F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Colors-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Colors-Swift/Colors-Swift-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -329,6 +451,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		9C6ECDBB19E8111300A2C1F9 /* Build configuration list for PBXNativeTarget "Colors-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C6ECDB719E8111300A2C1F9 /* Debug */,
+				9C6ECDB819E8111300A2C1F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
