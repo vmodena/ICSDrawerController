@@ -290,7 +290,7 @@ typedef NS_ENUM(NSUInteger, ICSDrawerControllerState)
                 else {
                     // Animate the drawer opening, as the opening gesture hasn't been completed or it has
                     // been reverted by the user
-                    [self didClose];
+                    self.drawerState = ICSDrawerControllerStateClosed;
 
                     // Here we save the current position for the leftView since
                     // we want the opening animation to start from the current position
