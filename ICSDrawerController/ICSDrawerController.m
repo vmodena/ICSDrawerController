@@ -74,6 +74,10 @@ typedef NS_ENUM(NSUInteger, ICSDrawerControllerState)
         _leftViewController = leftViewController;
         _centerViewController = centerViewController;
         
+        UIView *vi = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 8, [UIScreen mainScreen].bounds.size.height)];
+        vi.backgroundColor = [UIColor clearColor];
+        [_centerViewController.view addSubview:vi];
+        
         if ([_leftViewController respondsToSelector:@selector(setDrawer:)]) {
             _leftViewController.drawer = self;
         }

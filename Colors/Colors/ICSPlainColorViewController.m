@@ -46,12 +46,21 @@
     UIImage *hamburger = [UIImage imageNamed:@"hamburger"];
     NSParameterAssert(hamburger);
     
+    UIScrollView *scr = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    scr.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.height);
+    [self.view addSubview:scr];
+    
     self.openDrawerButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.openDrawerButton.frame = CGRectMake(10.0f, 20.0f, 44.0f, 44.0f);
     [self.openDrawerButton setImage:hamburger forState:UIControlStateNormal];
     [self.openDrawerButton addTarget:self action:@selector(openDrawer:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:self.openDrawerButton];
+    
+    
+    
+    
+    
 }
 
 #pragma mark - Configuring the view’s layout behavior
